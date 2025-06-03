@@ -13,11 +13,12 @@ spec:
       labels:
         app: grade-submission-api
     spec:
-      ###imagePullSecrets:
-      ###- name: ghcr-secret
+      imagePullSecrets:
+      - name: ghcr-secret
       containers:
       - name: grade-submission-api
         ### image: ghcr.io/openmulticloud/kubernetes-cicd-tutorial:fc8a1255d065ae82bcc09868170ab406d1de0602
+        ### This WORKS WHEN WE USE A Runner from AWS Cloud (Ubuntu Server that runs Docker)
         image: ghcr.io/openmulticloud/kubernetes-cicd-tutorial:fc8a1255d065ae82bcc09868170ab406d1de0602
         ### Tempororarily use a public Repo as we can not push to normal/ private repo from my AWS PC yet (Code Defender block push from AWS PC's Runner
         ### image: rslim087/kubernetes-course-grade-submission-api:stateless
